@@ -4,9 +4,7 @@
  * @author Liang <liang@maichong.it>
  */
 
-
 import alaska from 'alaska';
-import * as _ from 'lodash';
 
 /**
  * @class SettingsService

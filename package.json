@@ -2,7 +2,7 @@
   "name": "alaska-settings",
   "version": "0.1.0",
   "description": "Alaska settings service",
-  "main": "index.js",
+  "main": "lib/alaska-settings.js",
   "scripts": {
     "build": "babel ./src --out-dir ./lib",
     "watch": "babel ./src --out-dir ./lib -w",
