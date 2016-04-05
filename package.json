@@ -1,6 +1,6 @@
 {
   "name": "alaska-settings",
-  "version": "0.1.0",
+  "version": "0.6.1",
   "description": "Alaska settings service",
   "main": "lib/alaska-settings.js",
   "scripts": {
@@ -29,7 +29,7 @@
   "dependencies": {
     "alaska-field-mixed": "^0.6.0",
     "alaska-field-select": "^0.6.1",
-    "alaska-field-text": "^0.4.2",
+    "alaska-field-text": "^0.6.0",
     "debug": "^2.2.0"
   },
   "devDependencies": {

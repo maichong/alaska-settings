@@ -9,6 +9,8 @@ export default class Settings extends service.Model {
   static defaultSort = 'group service';
   static defaultColumns = '_id,title,group,service';
   static cache = 600; //缓存10分钟
+  static hidden = true;
+
   static fields = {
     _id: String,
     title: {
