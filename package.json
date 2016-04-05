@@ -26,6 +26,11 @@
   "peerDependencies": {
     "alaska": "*"
   },
+  "dependencies": {
+    "alaska-field-mixed": "^0.6.0",
+    "alaska-field-select": "^0.6.1",
+    "alaska-field-text": "^0.4.2"
+  },
   "devDependencies": {
     "babel-plugin-syntax-async-functions": "^6.5.0",
     "babel-plugin-syntax-class-properties": "^6.5.0",

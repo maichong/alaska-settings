@@ -6,7 +6,9 @@
 
 export default{
   Settings: 'Settings',
+  Group: 'Group',
   Value: 'Value',
   Help: 'Help',
-  Options: 'Options'
+  Options: 'Options',
+  'Basic Settings': 'Basic Settings'
 };

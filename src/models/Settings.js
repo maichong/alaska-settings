@@ -6,8 +6,8 @@
 
 export default class Settings extends service.Model {
   static label = 'Settings';
-  static defaultSort = 'service';
-  static defaultColumns = '_id,title,service';
+  static defaultSort = 'group service';
+  static defaultColumns = '_id,title,group,service';
   static fields = {
     _id: String,
     title: {
@@ -16,6 +16,10 @@ export default class Settings extends service.Model {
     },
     service: {
       label: 'Service',
+      type: String
+    },
+    group: {
+      label: 'Group',
       type: String
     },
     value: {
@@ -33,28 +37,31 @@ export default class Settings extends service.Model {
       default: 'text',
       options: [{
         label: 'Text',
-        value: 'text'
-      }, {
-        label: 'Checkbox',
-        value: 'checkbox'
+        value: 'TextFieldView'
       }, {
         label: 'Number',
-        value: 'number'
+        value: 'NumberFieldView'
+      }, {
+        label: 'Checkbox',
+        value: 'CheckboxFieldView'
+      }, {
+        label: 'Select',
+        value: 'SelectFieldView'
       }, {
         label: 'Date',
-        value: 'date'
+        value: 'DateFieldView'
       }, {
         label: 'Datetime',
-        value: 'datetime'
+        value: 'DatetimeFieldView'
       }, {
         label: 'Mixed',
-        value: 'mixed'
+        value: 'MixedFieldView'
       }, {
         label: 'Html',
-        value: 'html'
+        value: 'HtmlFieldView'
       }, {
         label: 'Image',
-        value: 'image'
+        value: 'ImageFieldView'
       }]
     },
     options: {
