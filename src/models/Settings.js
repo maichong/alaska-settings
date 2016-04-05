@@ -8,6 +8,7 @@ export default class Settings extends service.Model {
   static label = 'Settings';
   static defaultSort = 'group service';
   static defaultColumns = '_id,title,group,service';
+  static cache = 600; //缓存10分钟
   static fields = {
     _id: String,
     title: {
@@ -34,7 +35,7 @@ export default class Settings extends service.Model {
     type: {
       label: 'Type',
       type: 'select',
-      default: 'text',
+      default: 'MixedFieldView',
       options: [{
         label: 'Text',
         value: 'TextFieldView'
