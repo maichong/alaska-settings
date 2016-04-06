@@ -4,6 +4,6 @@
  * @author Liang <liang@maichong.it>
  */
 
-export default{
+export default {
   prefix: false
 };
