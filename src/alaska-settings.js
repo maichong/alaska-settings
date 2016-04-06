@@ -72,7 +72,7 @@ export default class SettingsService extends alaska.Service {
       return null;
     }
     record.value = value;
-    await record.save;
+    await record.save();
     return record;
   }
 }
