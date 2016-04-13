@@ -1,6 +1,6 @@
 {
   "name": "alaska-settings",
-  "version": "0.7.2",
+  "version": "0.8.0",
   "description": "Alaska settings service",
   "main": "lib/alaska-settings.js",
   "scripts": {
@@ -24,21 +24,12 @@
   },
   "homepage": "https://github.com/maichong/alaska-settings#readme",
   "peerDependencies": {
-    "alaska": "^0.7.3"
+    "alaska": "^0.8.2"
   },
   "dependencies": {
     "alaska-field-mixed": "^0.6.0",
-    "alaska-field-select": "^0.7.0",
+    "alaska-field-select": "^0.7.3",
     "alaska-field-text": "^0.6.0",
     "debug": "^2.2.0"
-  },
-  "devDependencies": {
-    "babel-plugin-syntax-async-functions": "^6.5.0",
-    "babel-plugin-syntax-class-properties": "^6.5.0",
-    "babel-plugin-transform-class-properties": "^6.6.0",
-    "babel-plugin-transform-es2015-destructuring": "^6.6.5",
-    "babel-plugin-transform-es2015-parameters": "^6.7.0",
-    "babel-plugin-transform-object-rest-spread": "^6.6.5",
-    "rimraf": "^2.5.2"
   }
 }
