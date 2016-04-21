@@ -5,10 +5,10 @@
  */
 
 import React from 'react';
-import _ from 'lodash';
+import _forEach from 'lodash/forEach';
+import _map from 'lodash/map';
 
 import { actions } from 'alaska-admin-view';
-import { Button, Panel, Navbar } from 'react-bootstrap';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -50,11 +50,11 @@ class SettingsEditor extends React.Component {
       const { t } = this.context;
       const results = props.lists[KEY].results;
       const map = newState.map = {};
-      _.forEach(results, item => map[item._id] = item);
+      _forEach(results, item => map[item._id] = item);
 
       const fields = newState.fields = {};
       const groups = newState.groups = {};
-      _.each(results, item => {
+      _forEach(results, item => {
         let groupKey = item.group || 'Basic Settings';
         if (!groups[groupKey]) {
           groups[groupKey] = {
@@ -63,7 +63,7 @@ class SettingsEditor extends React.Component {
           };
         }
         groups[groupKey].items.push(item);
-        fields[item._id] = _.assign({
+        fields[item._id] = Object.assign({
           label: t(item.title, item.service),
           help: t(item.help, item.service)
         }, item.options);
@@ -85,7 +85,7 @@ class SettingsEditor extends React.Component {
   };
 
   handleChange(key, value) {
-    let values = _.assign({}, this.state.values, {
+    let values = Object.assign({}, this.state.values, {
       [key]: value
     });
     this.setState({ values });
@@ -94,8 +94,8 @@ class SettingsEditor extends React.Component {
   handleSave = () => {
     const { values, map } = this.state;
     const save = this.props.actions.save;
-    _.forEach(values, (value, id) => {
-      let data = _.assign({}, map[id], { id, value });
+    _forEach(values, (value, id) => {
+      let data = Object.assign({}, map[id], { id, value });
       save({
         service: 'alaska-settings',
         model: 'Settings',
@@ -115,8 +115,8 @@ class SettingsEditor extends React.Component {
       content = <div className="loading">Loading...</div>;
     } else {
       content = [];
-      _.forEach(groups, (group, index) => {
-        let items = _.map(group.items, (item, index) => {
+      _forEach(groups, (group, index) => {
+        let items = _map(group.items, (item, index) => {
           let FieldView = views[item.type] || views.MixedFieldView;
           let value = values[item._id];
           if (value === undefined) {
@@ -129,7 +129,10 @@ class SettingsEditor extends React.Component {
             onChange={this.handleChange.bind(this, item._id)}
           />);
         });
-        content.push(<Panel header={group.title} key={index}>{items}</Panel>);
+        content.push(<div className="panel panel-default" key={index}>
+          <div className="panel-heading">{group.title}</div>
+          <div className="panel-body">{items}</div>
+        </div>);
       });
     }
     return (
@@ -140,18 +143,20 @@ class SettingsEditor extends React.Component {
         <div className="form-horizontal">
           {content}
         </div>
-        <Navbar id="editorBottomBar" fixedBottom={true} fluid={true}>
-          <Navbar.Form pullRight>
-            <Button
-              onClick={this.handleSave}
-              bsStyle="primary"
-            >{t('Save')}</Button>
-            <Button
-              onClick={this.refresh}
-              bsStyle="warning"
-            >{t('Refresh')}</Button>
-          </Navbar.Form>
-        </Navbar>
+        <nav className="navbar navbar-fixed-bottom bottom-bar">
+          <div className="container-fluid">
+            <div className="navbar-form navbar-right">
+              <button
+                onClick={this.handleSave}
+                className="btn btn-primary"
+              >{t('Save')}</button>
+              <button
+                onClick={this.refresh}
+                className="btn btn-warning"
+              >{t('Refresh')}</button>
+            </div>
+          </div>
+        </nav>
       </div>
     );
   }

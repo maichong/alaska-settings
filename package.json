@@ -1,6 +1,6 @@
 {
   "name": "alaska-settings",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "Alaska settings service",
   "main": "lib/alaska-settings.js",
   "scripts": {
@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/maichong/alaska-settings#readme",
   "peerDependencies": {
-    "alaska": "^0.8.2"
+    "alaska": "^0.8.6"
   },
   "dependencies": {
-    "alaska-field-mixed": "^0.6.0",
-    "alaska-field-select": "^0.7.3",
-    "alaska-field-text": "^0.6.0",
+    "alaska-field-mixed": "^0.8.0",
+    "alaska-field-select": "^0.8.0",
+    "alaska-field-text": "^0.8.0",
     "debug": "^2.2.0"
   }
 }
