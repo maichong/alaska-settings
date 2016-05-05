@@ -41,9 +41,6 @@ class SettingsEditor extends React.Component {
     this.refresh();
   }
 
-  componentDidMount() {
-  }
-
   componentWillReceiveProps(props) {
     let newState = {};
     if (props.lists[KEY]) {

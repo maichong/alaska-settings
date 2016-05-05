@@ -20,8 +20,8 @@ export const routes = [{
 export default class SettingsService extends alaska.Service {
   constructor(options, alaska) {
     options = options || {};
-    options.id = 'alaska-settings';
-    options.dir = __dirname;
+    options.dir = options.dir || __dirname;
+    options.id = options.id || 'alaska-settings';
     super(options, alaska);
   }
 
