@@ -62,7 +62,8 @@ class SettingsEditor extends React.Component {
         groups[groupKey].items.push(item);
         fields[item._id] = Object.assign({
           label: t(item.title, item.service),
-          help: t(item.help, item.service)
+          help: t(item.help, item.service),
+          service: item.service
         }, item.options);
       });
     }
