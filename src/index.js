@@ -17,12 +17,12 @@ export const routes = [{
 /**
  * @class SettingsService
  */
-export default class SettingsService extends alaska.Service {
-  constructor(options, alaska) {
+class SettingsService extends alaska.Service {
+  constructor(options) {
     options = options || {};
     options.dir = options.dir || __dirname;
     options.id = options.id || 'alaska-settings';
-    super(options, alaska);
+    super(options);
   }
 
   /**
@@ -76,3 +76,5 @@ export default class SettingsService extends alaska.Service {
     return record;
   }
 }
+
+export default new SettingsService();

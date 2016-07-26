@@ -4,8 +4,11 @@
  * @author Liang <liang@maichong.it>
  */
 
-export default class Settings extends service.Model {
+import alaska from 'alaska';
+
+export default class Settings extends alaska.Model {
   static label = 'Settings';
+  static icon = 'cogs';
   static defaultSort = 'group service';
   static defaultColumns = '_id title group service';
   static cache = 600; //缓存10分钟
