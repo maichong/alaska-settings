@@ -15,17 +15,19 @@ import { connect } from 'react-redux';
 
 const KEY = 'alaska-settings.settings';
 
+const { object, func } = React.PropTypes;
+
 class SettingsEditor extends React.Component {
 
   static propTypes = {
-    lists: React.PropTypes.object,
-    actions: React.PropTypes.object,
+    lists: object,
+    actions: object,
   };
 
   static contextTypes = {
-    views: React.PropTypes.object,
-    settings: React.PropTypes.object,
-    t: React.PropTypes.func
+    views: object,
+    settings: object,
+    t: func
   };
 
   constructor(props) {

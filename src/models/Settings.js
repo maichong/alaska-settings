@@ -12,7 +12,12 @@ export default class Settings extends alaska.Model {
   static defaultSort = 'group service';
   static defaultColumns = '_id title group service';
   static cache = 600; //缓存10分钟
-  static hidden = true;
+
+  static defaultFilters = ctx => {
+    if (!ctx.state.superMode) {
+      return { super: { $ne: true } };
+    }
+  };
 
   static fields = {
     _id: String,
@@ -69,6 +74,10 @@ export default class Settings extends alaska.Model {
         label: 'Image',
         value: 'ImageFieldView'
       }]
+    },
+    super: {
+      label: 'Super',
+      type: Boolean
     },
     options: {
       label: 'Options',
